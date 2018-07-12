@@ -3,8 +3,8 @@
 
 from __future__ import unicode_literals
 import uuid
-import boto3
-from botocore.client import Config
+#import boto3
+#from botocore.client import Config
 from datetime import datetime
 from django.shortcuts import render
 import json
