@@ -1,0 +1,212 @@
+{% extends "main.html" %}
+{% load staticfiles %}
+
+{% block article %}
+	<div class="col-lg-10">
+		<h1>{{ title }}</h1>
+	</div>
+
+	<div class="col-lg-2">
+		<form action="/car/change-show-count/" method="post">
+			{% csrf_token %}
+			Показывать по: <select name="show_by_count" onchange="this.form.submit()">
+				<option value="2" {% if show_cars_by|safe == "2" %}selected{% else %}{% endif %}>2</option>
+				<option value="5" {% if show_cars_by|safe == "5" %}selected{% else %}{% endif %}>5</option>
+				<option value="10" {% if show_cars_by|safe == "10" %}selected{% else %}{% endif %}>10</option>
+				<option value="20" {% if show_cars_by|safe == "20" %}selected{% else %}{% endif %}>20</option>
+			</select>
+		</form>
+	</div>
+
+<form action="/car/export-xls/" method="post">
+{% csrf_token %}
+
+<table data-toggle="table">
+	<thead>
+	<tr>
+		<th><form></form></th>
+		<th>
+			<div style="position: relative;">
+			Дата добавления
+			<form action="/car/change-order-by/" method="post" style="position: absolute; top: 0px; right: 0;">
+				{% csrf_token %}
+				<input name="car_change_order_by" value="car_date" class="text-hide">
+				<input type="submit" value="O">
+			</form>
+			</div>
+		</th>
+		<th>
+			<div style="position: relative;">
+			Компания
+			<form action="/car/change-order-by/" method="post" style="position: absolute; top: 0px; right: 0;">
+				{% csrf_token %}
+				<input name="car_change_order_by" value="car_car_company" class="text-hide">
+				<input type="submit" value="O">
+			</form>
+			</div>
+		</th>
+		<th>
+			<div style="position: relative;">
+			ИНН компании
+			<form action="/car/change-order-by/" method="post" style="position: absolute; top: 0px; right: 0;">
+				{% csrf_token %}
+				<input name="car_change_order_by" value="car_car_company_id" class="text-hide">
+				<input type="submit" value="O">
+			</form>
+			</div>
+		</th>
+		<th>
+			<div style="position: relative;">
+			VIN код
+			<form action="/car/change-order-by/" method="post" style="position: absolute; top: 0px; right: 0;">
+				{% csrf_token %}
+				<input name="car_change_order_by" value="car_vin" class="text-hide">
+				<input type="submit" value="O">
+			</form>
+			</div>
+		</th>
+		<th>
+			<div style="position: relative;">
+			Модель
+			<form action="/car/change-order-by/" method="post" style="position: absolute; top: 0px; right: 0;">
+				{% csrf_token %}
+				<input name="car_change_order_by" value="car_model" class="text-hide">
+				<input type="submit" value="O">
+			</form>
+			</div>
+		</th>
+		<th>
+			<div style="position: relative;">
+			Год
+			<form action="/car/change-order-by/" method="post" style="position: absolute; top: 0px; right: 0;">
+				{% csrf_token %}
+				<input name="car_change_order_by" value="car_year" class="text-hide">
+				<input type="submit" value="O">
+			</form>
+			</div>
+		</th>
+		<th>
+			<div style="position: relative;">
+			Цена
+			<form action="/car/change-order-by/" method="post" style="position: absolute; top: 0px; right: 0;">
+				{% csrf_token %}
+				<input name="car_change_order_by" value="car_price" class="text-hide">
+				<input type="submit" value="O">
+			</form>
+			</div>
+		</th>
+		<th>
+			<div style="position: relative;">
+			Госномер
+			<form action="/car/change-order-by/" method="post" style="position: absolute; top: 0px; right: 0;">
+				{% csrf_token %}
+				<input name="car_change_order_by" value="car_vnumber" class="text-hide">
+				<input type="submit" value="O">
+			</form>
+			</div>
+		</th>
+		<th>Изображения</th>
+		<th>
+			<div style="position: relative;">
+			Пробег
+			<form action="/car/change-order-by/" method="post" style="position: absolute; top: 0px; right: 0;">
+				{% csrf_token %}
+				<input name="car_change_order_by" value="car_km" class="text-hide">
+				<input type="submit" value="O">
+			</form>
+			</div>
+		</th>
+		<th>
+			<div style="position: relative;">
+			Для продажи
+			<form action="/car/change-order-by/" method="post" style="position: absolute; top: 0px; right: 0;">
+				{% csrf_token %}
+				<input name="car_change_order_by" value="car_for_loan" class="text-hide">
+				<input type="submit" value="O">
+			</form>
+			</div>
+		</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	{% for car in cars %}
+	<tr>
+		<td><input type="checkbox" name="car_id" value="{{ car.id }}"></td>
+		<td>{{ car.car_date|date:"d.m.Y" }}</td>
+		<td>{{ car.car_car_company.car_company_name }}</td>
+		<td>{{ car.car_car_company.car_company_inn }}</td>
+		<td>{{ car.car_vin }}</td>
+		<td>{{ car.car_make }} {{ car.car_model }}</td>
+		<td>{{ car.car_year }}</td>
+		<td>{{ car.car_price }} руб.</td>
+		<td>{{ car.car_vnumber }}</td>
+		<td>
+			<a href="/car/profile/{{ car.id }}">
+				Изображения ({{ car.car_image_car_key.count }})
+			</a>
+		</td>
+		<td>{{ car.car_km }} KМ</td>
+		<td>{% if car.car_for_loan == 1 %}Нет{% else %}Да{% endif %}</td>
+	</tr>
+	{% endfor %}
+	</tbody>
+</table>
+	<button type="submit" class="btn btn-success text-light">
+		Выгрузить выделенные в XLS
+	</button>
+</form>
+
+<div class="line"></div>
+	<h1>{{ test }}</h1>
+<div class="line"></div>
+
+<nav>
+	<ul class="pagination justify-content-center">
+		{% if cars.has_previous %}
+			<li class="page-item">
+				<a class="page-link" href="/car/list/{{ cars.previous_page_number }}/">
+					&laquo;
+				</a>
+			</li>
+		{% else %}
+			<li class="page-item disabled">
+				<a class="page-link">
+					&laquo;
+				</a>
+			</li>
+		{% endif %}
+
+		{% for page in cars.paginator.page_range %}
+			{% if page == cars.number %}
+				<li class="page-item disabled">
+					<a class="page-link">
+						{{ page }}
+					</a>
+				</li>
+			{% else %}
+				<li class="page-item">
+					<a class="page-link" href="/car/list/{{ page }}/">
+						{{ page }}
+					</a>
+				</li>
+			{% endif %}
+		{% endfor %}
+
+		{% if cars.has_next %}
+			<li class="page-item">
+				<a class="page-link" href="/car/list/{{ cars.next_page_number }}/">
+					&raquo;
+				</a>
+			</li>
+		{% else %}
+			<li class="page-item disabled">
+				<a class="page-link">
+					&raquo;
+				</a>
+			</li>
+		{% endif %}
+	</ul>
+</nav>
+{#</nav>#}
+{% endblock %}

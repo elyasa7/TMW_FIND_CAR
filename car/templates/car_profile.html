@@ -1,0 +1,50 @@
+{% extends "main.html" %}
+{% load staticfiles %}
+
+{% block article %}
+<h3>{{ title }}</h3>
+
+<h1>{{ car.car_make }} {{ car.car_model }}</h1>
+<div class="line"></div>
+<div class="row">
+<div class="col-4">
+<table style="width: 100%;">
+	<tr>
+		<td>Дата добавления</td>
+		<td>{{ car.car_date|date:"d.m.Y" }}</td>
+	</tr>
+	<tr>
+		<td>Компания</td>
+		<td>{{ car.car_car_company.car_company_name }}</td>
+	</tr>
+	<tr>
+		<td>ИНН Компании</td>
+		<td>{{ car.car_car_company.car_company_inn }}</td>
+	</tr>
+	<tr>
+		<td>ВИН код автомобиля</td>
+		<td>{{ car.car_vin }}</td>
+	</tr>
+	<tr>
+		<td>Год выпуска</td>
+		<td>{{ car.car_year }}</td>
+	</tr>
+	<tr>
+		<td>Цена</td>
+		<td>{{ car.car_price }} руб.</td>
+	</tr>
+	<tr>
+		<td>Гос номер</td>
+		<td>{{ car.car_vnumber }}</td>
+	</tr>
+</table>
+</div>
+
+
+<div class="col-8">
+{% for image in car.car_image_car_key.all %}
+	<img src="{{ image.car_image_url }}" style="max-width: 300px; padding: 10px; float: left;">
+{% endfor %}
+</div>
+</div>
+{% endblock %}

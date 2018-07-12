@@ -1,0 +1,169 @@
+{
+  "Cars": {
+	"Companies": [
+	  {
+		"CompanyGroupId": "212112",
+		"CompanyGroupName": "BMW Group",
+		"GroupCompanies": [
+		  {
+			"ComapnyINN": "221321321",
+			"CompanyName": "BMW Волгоградский проспект"
+		  }
+		]
+	  }
+	],
+	"Car": [
+	  {
+		"ForLoan": "0",
+		"CompanyGroupId": "212112",
+		"CompanyINN": "221321321",
+		"VIN": "255505255505",
+		"Id": "255505",
+		"Category": "Автомобили",
+		"Accident": "Не битый",
+		"Make": "Land Rover",
+		"Model": "Freelander",
+		"Year": "2004",
+		"Kilometrage": "157000",
+		"BodyType": "Внедорожник",
+		"Transmission": "Механика",
+		"FuelType": "Бензин",
+		"Doors": "5",
+		"Color": "Черный",
+		"EngineSize": "1800",
+		"Price": "400999",
+		"Images": {
+		  "CarImage": [
+			{
+			  "-url": "https://s3.us-east-2.amazonaws.com/tmw-test/20180711162411459563"
+			},
+			{
+			  "-url": "https://s3.us-east-2.amazonaws.com/tmw-test/20180711162415926545"
+			},
+			{
+			  "-url": "https://s3.us-east-2.amazonaws.com/tmw-test/20180711162418385206"
+			}
+		  ]
+		},
+		"Gosnomer": "3e4r5t"
+	  },
+	  {
+		"ForLoan": "1",
+		"CompanyGroupId": "212112",
+		"CompanyINN": "221321321",
+		"VIN": "2555052551235",
+		"Id": "255507",
+		"Category": "Автомобили",
+		"Accident": "Не битый",
+		"Make": "Toyota",
+		"Model": "Land Cruiser 200",
+		"Year": "2009",
+		"Kilometrage": "141000",
+		"BodyType": "Внедорожник",
+		"Transmission": "Механика",
+		"FuelType": "Бензин",
+		"Doors": "5",
+		"Color": "Vtnfkbr",
+		"EngineSize": "3700",
+		"Price": "500584",
+		"Images": {
+		  "CarImage": [
+			{
+			  "-url": "https://s3.us-east-2.amazonaws.com/tmw-test/20180711162800796904"
+			},
+			{
+			  "-url": "https://s3.us-east-2.amazonaws.com/tmw-test/20180711162810058826"
+			},
+			{
+			  "-url": "https://s3.us-east-2.amazonaws.com/tmw-test/20180711162829699506"
+			},
+			{
+			  "-url": "https://s3.us-east-2.amazonaws.com/tmw-test/20180711162834191820"
+			},
+			{
+			  "-url": "https://s3.us-east-2.amazonaws.com/tmw-test/20180711162816405435"
+			}
+		  ]
+		},
+		"Gosnomer": "143hh76"
+	  },
+	  {
+		"ForLoan": "0",
+		"CompanyGroupId": "212112",
+		"CompanyINN": "221321321",
+		"VIN": "66543982347",
+		"Id": "255508",
+		"Category": "Автомобили",
+		"Accident": "Не битый",
+		"Make": "Toyota",
+		"Model": "Land Cruiser 200",
+		"Year": "2010",
+		"Kilometrage": "198000",
+		"BodyType": "Внедорожник",
+		"Transmission": "Механика",
+		"FuelType": "Бензин",
+		"Doors": "5",
+		"Color": "Vtnfkbr",
+		"EngineSize": "3700",
+		"Price": "440584",
+		"Images": {
+		  "CarImage": [
+			{
+			  "-url": "https://s3.us-east-2.amazonaws.com/tmw-test/20180711162800796904"
+			},
+			{
+			  "-url": "https://s3.us-east-2.amazonaws.com/tmw-test/20180711162810058826"
+			},
+			{
+			  "-url": "https://s3.us-east-2.amazonaws.com/tmw-test/20180711162829699506"
+			},
+			{
+			  "-url": "https://s3.us-east-2.amazonaws.com/tmw-test/20180711162834191820"
+			},
+			{
+			  "-url": "https://s3.us-east-2.amazonaws.com/tmw-test/20180711162816405435"
+			}
+		  ]
+		},
+		"Gosnomer": "ggty234"
+	  },
+	  {
+		"ForLoan": "1",
+		"CompanyGroupId": "212112",
+		"CompanyINN": "221321321",
+		"VIN": "525505255506",
+		"Id": "255506",
+		"Category": "Автомобили",
+		"Accident": "Не битый",
+		"Make": "BMW",
+		"Model": "X6",
+		"Year": "2010",
+		"Kilometrage": "287000",
+		"BodyType": "Внедорожник",
+		"Transmission": "Автомат",
+		"FuelType": "Бензин",
+		"Doors": "5",
+		"Color": "Черный",
+		"EngineSize": "3000",
+		"Price": "800999",
+		"Images": {
+		  "CarImage": [
+			{
+			  "-url": "https://s3.us-east-2.amazonaws.com/tmw-test/20180711163703791447"
+			},
+			{
+			  "-url": "https://s3.us-east-2.amazonaws.com/tmw-test/20180711163713607145"
+			},
+			{
+			  "-url": "https://s3.us-east-2.amazonaws.com/tmw-test/20180711163718310051"
+			},
+			{
+			  "-url": "https://s3.us-east-2.amazonaws.com/tmw-test/20180711163727310669"
+			}
+		  ]
+		},
+		"Gosnomer": "1ff345"
+	  }
+	]
+  }
+}
